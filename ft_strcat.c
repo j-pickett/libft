@@ -25,7 +25,8 @@ char	*ft_strcat(char *dest, const char *src)
 	{
 		dest[x + y] = src[y];
 		y++;
+		x++;
 	}
-	dest[x + y] = '\0';
+	dest[x] = '\0';
 	return (dest);
 }
