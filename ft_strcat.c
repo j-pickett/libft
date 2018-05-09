@@ -12,21 +12,21 @@
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	int x;
-	int y;
+	int		pos;
+	int		i;
 
-	x = 0;
-	while (dest[x])
-		x++;
-	y = 0;
-	while (src[y])
+	i = 0;
+	pos = 0;
+	while (s1[pos])
+		pos++;
+	while (s2[i])
 	{
-		dest[x + y] = src[y];
-		y++;
-		x++;
+		s1[pos] = s2[i];
+		pos++;
+		i++;
 	}
-	dest[x] = '\0';
-	return (dest);
+	s1[pos] = '\0';
+	return (s1);
 }
