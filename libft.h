@@ -39,7 +39,7 @@ int					ft_isspace(int c);
 int					ft_isupper(int c);
 char				*ft_itoa(int n);
 void				*ft_memalloc(size_t size);
-void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(void *s1, void *s2, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
