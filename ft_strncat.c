@@ -14,17 +14,19 @@
 
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	int		pos;
 
-	j = 0;
-	i = ft_strlen(dest);
-	while (src[j] && j < n)
+	pos = 0;
+	i = 0;
+	while (s1[pos])
+		pos++;
+	while (i < n && s2[i])
 	{
-		dest[i] = src[j];
+		s1[pos] = s2[i];
 		i++;
-		j++;
+		pos++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	s1[pos] = '\0';
+	return (s1);
 }
