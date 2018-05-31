@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_last_word.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apickett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/18 14:16:59 by apickett          #+#    #+#             */
-/*   Updated: 2018/04/19 20:14:00 by apickett         ###   ########.fr       */
+/*   Created: 2018/05/20 00:04:16 by apickett          #+#    #+#             */
+/*   Updated: 2018/05/20 00:04:18 by apickett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-int		ft_atoi(const char *str)
+void	last_word(char *str)
 {
-	unsigned int i;
-	unsigned int neg;
-	unsigned int nbr;
+	int j;
+	int i;
 
 	i = 0;
-	nbr = 0;
-	neg = 1;
-	while (ISSPACE(str[i]))
-		i++;
-	if (str[i] == '-')
-		neg = -1;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	j = 0;
+	while (str[i] != '\0')
 	{
-		nbr = nbr * 10 + (str[i] - '0');
+		if (str[i] == ' ' && str[i + 1] >= 33 && str[i + 1] <= 127)
+			j = i + 1;
 		i++;
 	}
-	return (nbr * neg);
+	while (str[j] >= 33 && str[j] <= 127)
+	{
+		write(1, &str[j], 1);
+		j++;
+	}
+}
+
+int		main(int argc, char **argv)
+{
+	if (argc == 2)
+		last_word(argv[1]);
+	write(1, "\n", 1);
+	return (0);
 }
