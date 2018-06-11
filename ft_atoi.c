@@ -21,7 +21,7 @@ int		ft_atoi(const char *str)
 	i = 0;
 	nbr = 0;
 	neg = 1;
-	while (ISSPACE(str[i]))
+	while (ft_isspace(str[i]))
 		i++;
 	if (str[i] == '-')
 		neg = -1;
